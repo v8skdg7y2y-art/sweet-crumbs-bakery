@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Products - Sweet Crumbs Bakery</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="logo">
+        <a href="/">
+            Sweet Crumbs Bakery
+        </a>
+    </div>
+
+   <nav>
+
+    <a href="/">Home</a>
+
+    <a href="/products">
+        Products
+    </a>
+
+    <a href="/cart">
+        Cart
+    </a>
+
+    {% if session.get("user_id") %}
+
+        <a href="/account">
+            My Account
+        </a>
+
+        <a href="/logout">
+            Logout
+        </a>
+
+    {% else %}
+
+        <a href="/login">
+            Login
+        </a>
+
+        <a href="/register">
+            Register
+        </a>
+
+    {% endif %}
+
+</nav>
+
+</header>
+
+
+<main>
+
+<section class="about">
+
+    <h1>Our Products</h1>
+
+    <p>
+        Discover our delicious selection
+        of freshly baked treats.
+    </p>
+
+</section>
+
+
+<section class="featured">
+
+    <div class="feature-grid">
+
+        {% for product in products %}
+
+        <div class="feature-card">
+            <img
+    src="{{ url_for('static', filename='images/products/' ~ product['image']) }}"
+    alt="{{ product['name'] }}"
+    class="product-image"
+>
+
+            <h2>
+                {{ product.name }}
+            </h2>
+
+            <p>
+                {{ product.description }}
+            </p>
+
+            <p>
+                <strong>
+                    R{{ "%.2f"|format(product.price) }}
+                </strong>
+            </p>
+
+            <p>
+                Stock:
+                {{ product.stock }}
+            </p>
+
+            <a class="button"
+               href="/product/{{ product.id }}">
+
+                View Product
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 Sweet Crumbs Bakery.
+        All rights reserved.
+    </p>
+
+</footer>
+
+</body>
+
+</html>

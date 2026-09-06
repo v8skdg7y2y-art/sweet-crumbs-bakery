@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Account - Sweet Crumbs Bakery</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="logo">
+        <a href="/">
+            Sweet Crumbs Bakery
+        </a>
+    </div>
+
+   <nav>
+
+    <a href="/">Home</a>
+
+    <a href="/products">
+        Products
+    </a>
+
+    <a href="/cart">
+        Cart
+    </a>
+
+    {% if session.get("user_id") %}
+
+        <a href="/account">
+            My Account
+        </a>
+
+        <a href="/logout">
+            Logout
+        </a>
+
+    {% else %}
+
+        <a href="/login">
+            Login
+        </a>
+
+        <a href="/register">
+            Register
+        </a>
+
+    {% endif %}
+
+</nav>
+
+</header>
+
+
+<main>
+
+<section class="about">
+
+    <h1>My Account</h1>
+
+
+    <div class="feature-card">
+
+        <h2>
+            Welcome, {{ user.name }}!
+        </h2>
+
+        <p>
+            <strong>Email:</strong>
+            {{ user.email }}
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            {{ user.phone }}
+        </p>
+
+        <p>
+            <strong>Address:</strong>
+            {{ user.address }}
+        </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+        <h2>Order History</h2>
+
+        <p>
+            Your orders will appear here after you
+            complete your first purchase.
+        </p>
+
+    </div>
+
+
+    <a class="button" href="/products">
+        Continue Shopping
+    </a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 Sweet Crumbs Bakery.
+        All rights reserved.
+    </p>
+
+</footer>
+
+</body>
+
+</html>

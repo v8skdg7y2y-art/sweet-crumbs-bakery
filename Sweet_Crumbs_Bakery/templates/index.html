@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sweet Crumbs Bakery</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="top-ribbon"></div>
+
+    <header class="site-header">
+
+        <div class="logo">
+            <a href="/">Sweet Crumbs Bakery</a>
+        </div>
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/products">
+                Products
+            </a>
+
+            <a href="/cart">
+                Cart
+            </a>
+
+            {% if session.get("user_id") %}
+
+                <a href="/account">
+                    My Account
+                </a>
+
+                <a href="/logout">
+                    Logout
+                </a>
+
+                {% if session.get("user") and session["user"].get("is_admin") == 1 %}
+                    <a href="{{ url_for('admin_dashboard') }}">
+                        Admin Dashboard
+                    </a>
+                {% endif %}
+
+            {% else %}
+
+                <a href="/login">
+                    Login
+                </a>
+
+                <a href="/register">
+                    Register
+                </a>
+
+            {% endif %}
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h1>Welcome to Sweet Crumbs Bakery</h1>
+
+            <p>
+                Freshly baked treats made with love.
+            </p>
+
+            <a class="button" href="/products">
+                View Our Products
+            </a>
+
+        </section>
+
+        <section class="about">
+
+            <h2>Welcome to Sweet Crumbs</h2>
+
+            <p>
+                At Sweet Crumbs Bakery, we create delicious cakes,
+                cupcakes, pastries and freshly baked goods for every occasion.
+            </p>
+
+        </section>
+
+        <section class="featured">
+
+            <h2>Why Choose Sweet Crumbs?</h2>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <h3>Freshly Baked</h3>
+
+                    <p>
+                        Our bakery products are prepared fresh for our customers.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>Quality Ingredients</h3>
+
+                    <p>
+                        We use quality ingredients to create delicious treats.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>Made With Love</h3>
+
+                    <p>
+                        Every product is prepared with care and attention.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2026 Sweet Crumbs Bakery.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

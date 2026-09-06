@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sweet Crumbs Bakery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Sweet Crumbs Bakery</a>
+        </div>
+
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('products') }}">Products</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <h1>Contact Sweet Crumbs Bakery</h1>
+
+        <p>
+            We would love to hear from you. Contact us for orders,
+            custom cakes, and bakery enquiries.
+        </p>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+                <h2>Phone</h2>
+                <p>0836096792</p>
+            </div>
+
+            <div class="contact-card">
+                <h2>Email</h2>
+                <p>Nick@sweetcrumbs.com</p>
+            </div>
+
+            <div class="contact-card">
+                <h2>Address</h2>
+                <p>YOUR BAKERY ADDRESS</p>
+            </div>
+
+            <div class="contact-card">
+                <h2>Opening Hours</h2>
+                <p>Monday–Saturday: 08:00–17:00</p>
+                <p>Sunday: 09:00–14:00</p>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

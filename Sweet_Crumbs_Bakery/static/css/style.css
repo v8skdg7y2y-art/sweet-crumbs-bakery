@@ -1,0 +1,544 @@
+/* =====================================================
+   SWEET CRUMBS BAKERY - MAIN STYLESHEET
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff8f4;
+    color: #513b3b;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+a {
+    color: #9b5965;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #713f49;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #633f43;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+p {
+    margin-top: 0;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.top-ribbon {
+    background: #b86b77;
+    height: 8px;
+}
+
+.site-header {
+    align-items: center;
+    background: #fffaf7;
+    border-bottom: 1px solid #eadbd5;
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    color: #633f43;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.site-header nav {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: flex-end;
+}
+
+.site-header nav a {
+    color: #633f43;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.site-header nav a:hover {
+    color: #b86b77;
+}
+
+/* =====================================================
+   MAIN PAGE SECTIONS
+   ===================================================== */
+
+main {
+    min-height: 65vh;
+}
+
+.page-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 60px 5%;
+}
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #f8e3dc,
+        #fff8f4
+    );
+    border-radius: 0 0 35px 35px;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #806b67;
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+}
+
+.about,
+.featured {
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 70px 5%;
+    text-align: center;
+}
+
+.about p {
+    color: #806b67;
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.feature-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+}
+
+.feature-card {
+    background: #fffaf7;
+    border: 1px solid #eadbd5;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(90, 50, 40, 0.07);
+    padding: 30px 22px;
+}
+
+.feature-card h3 {
+    margin-top: 0;
+}
+
+.feature-card p {
+    color: #806b67;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.button,
+button,
+input[type="submit"] {
+    background: #b86b77;
+    border: none;
+    border-radius: 28px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    font-weight: bold;
+    padding: 13px 25px;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: #914f5b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background: #ead5d0;
+    color: #633f43;
+}
+
+.secondary-button:hover {
+    background: #dcbdb7;
+    color: #633f43;
+}
+
+.danger-button {
+    background: #a94442;
+}
+
+.danger-button:hover {
+    background: #7d2f2e;
+}
+
+/* =====================================================
+   PAGE HEADINGS
+   ===================================================== */
+
+.page-heading {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.page-heading h1 {
+    margin-bottom: 12px;
+}
+
+.page-heading p {
+    color: #806b67;
+}
+
+.eyebrow {
+    color: #b86b77;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* =====================================================
+   FORMS - REGISTER, LOGIN AND CHECKOUT
+   ===================================================== */
+
+.form-card {
+    background: #fffaf7;
+    border: 1px solid #eadbd5;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(90, 50, 40, 0.08);
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 35px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    color: #633f43;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    background: white;
+    border: 1px solid #d8c2bc;
+    border-radius: 10px;
+    font: inherit;
+    padding: 12px;
+    width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #b86b77;
+    outline: 2px solid rgba(184, 107, 119, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.form-footer {
+    color: #806b67;
+    margin-top: 25px;
+    text-align: center;
+}
+
+/* =====================================================
+   FLASH MESSAGES
+   ===================================================== */
+
+.flash-messages {
+    margin: 25px auto;
+    max-width: 1000px;
+    padding: 0 5%;
+}
+
+.flash-message {
+    background: #f8e3dc;
+    border: 1px solid #e2bdb4;
+    border-radius: 10px;
+    color: #633f43;
+    margin-bottom: 12px;
+    padding: 14px 18px;
+}
+
+/* =====================================================
+   CART AND CHECKOUT
+   ===================================================== */
+
+.cart-card,
+.checkout-card,
+.account-card,
+.order-card {
+    background: #fffaf7;
+    border: 1px solid #eadbd5;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(90, 50, 40, 0.07);
+    margin-bottom: 25px;
+    padding: 30px;
+}
+
+.cart-item {
+    align-items: center;
+    border-bottom: 1px solid #eadbd5;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item h3 {
+    margin: 0 0 5px;
+}
+
+.cart-item p {
+    color: #806b67;
+    margin: 0;
+}
+
+.cart-total {
+    border-top: 2px solid #eadbd5;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-top: 20px;
+}
+
+.cart-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.empty-message {
+    color: #806b67;
+    padding: 25px 0;
+    text-align: center;
+}
+
+/* =====================================================
+   TABLES
+   ===================================================== */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.admin-table th,
+.admin-table td {
+    border-bottom: 1px solid #eadbd5;
+    padding: 15px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.admin-table th {
+    background: #f3e2dc;
+    color: #633f43;
+    font-weight: bold;
+}
+
+.admin-table tr:hover {
+    background: #fff3ef;
+}
+
+.admin-product-image {
+    border-radius: 10px;
+    height: 65px;
+    object-fit: cover;
+    width: 65px;
+}
+
+.action-buttons {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.action-buttons form {
+    margin: 0;
+}
+
+.small-button {
+    background: #b86b77;
+    border-radius: 20px;
+    color: white;
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 8px 14px;
+}
+
+.small-button:hover {
+    background: #914f5b;
+    color: white;
+}
+
+/* =====================================================
+   ADMIN DASHBOARD
+   ===================================================== */
+
+.admin-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.admin-card {
+    background: #fffaf7;
+    border: 1px solid #eadbd5;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(90, 50, 40, 0.08);
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+.admin-card h2 {
+    margin-top: 0;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background: #633f43;
+    color: #fff8f4;
+    margin-top: 50px;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* =====================================================
+   MOBILE DESIGN
+   ===================================================== */
+
+@media (max-width: 800px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .site-header nav {
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-card,
+    .cart-card,
+    .checkout-card,
+    .account-card,
+    .order-card,
+    .admin-card {
+        padding: 20px;
+    }
+
+    .form-actions,
+    .cart-actions,
+    .admin-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .form-actions .button,
+    .cart-actions .button,
+    .admin-actions .button {
+        width: 100%;
+    }
+}

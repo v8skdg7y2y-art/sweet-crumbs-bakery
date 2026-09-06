@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Sweet Crumbs Bakery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="logo">
+        <a href="{{ url_for('home') }}">Sweet Crumbs Bakery</a>
+    </div>
+
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('admin_products') }}">Manage Products</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+</header>
+
+<main class="page-container">
+
+    <section class="page-heading">
+        <p class="eyebrow">Administration</p>
+        <h1>Admin Dashboard</h1>
+        <p>Manage your bakery products and customer orders.</p>
+    </section>
+
+    <div class="admin-actions">
+        <a class="button" href="{{ url_for('admin_products') }}">
+            Manage Products
+        </a>
+
+        <a class="button secondary-button" href="{{ url_for('home') }}">
+            View Website
+        </a>
+    </div>
+
+    <section class="admin-card">
+        <h2>Customer Orders</h2>
+
+        {% if orders %}
+            <div class="table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <td>#{{ order.id }}</td>
+                                <td>{{ order.customer_name }}</td>
+                                <td>{{ order.customer_email }}</td>
+                                <td>{{ order.phone }}</td>
+                                <td>R{{ "%.2f"|format(order.total) }}</td>
+                                <td>{{ order.status }}</td>
+                                <td>{{ order.created_at }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p class="empty-message">There are no customer orders yet.</p>
+        {% endif %}
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Sweet Crumbs Bakery. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
