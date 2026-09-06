@@ -1,5 +1,4 @@
 import os
-import mysql.connector
 from flask import (
     Flask,
     render_template,
@@ -16,7 +15,7 @@ import mysql.connector
 
 app = Flask(__name__)
 
-app.secret_key = "sweet-crumbs-development-key"
+app.secret_key = os.environ.get("SECRET_KEY", "sweet-crumbs-development-key")
 
 
 # ============================================================
@@ -25,12 +24,14 @@ app.secret_key = "sweet-crumbs-development-key"
 
 def get_db_connection():
     return mysql.connector.connect(
-        host=os.environ.get("DB_HOST"),
-        port=int(os.environ.get("DB_PORT", 3306)),
-        user=os.environ.get("DB_USER"),
-        password=os.environ.get("DB_PASSWORD"),
-        database=os.environ.get("DB_NAME"),
-        ssl_disabled=False
+        host=os.environ.get("DB_HOST", "127.0.0.1"),
+        port=int(os.environ.get("DB_PORT", "3306")),
+        user=os.environ.get("DB_USER", "root"),
+        password=os.environ.get("DB_PASSWORD", ""),
+        database=os.environ.get("DB_NAME", "sweet_crumbs"),
+        connection_timeout=10,
+        autocommit=False,
+        ssl_disabled=False if os.environ.get("DB_HOST") else True
     )
 
 
